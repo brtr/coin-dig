@@ -1,0 +1,29 @@
+<div class="mb-5 mx-5 row">
+  <% @records.each do |record| %>
+    <div class="col-6">
+      <div class="card" style="height:310px;">
+        <div class="card-header">
+          <h5 class="card-title mb-0">
+            <img src="<%= record.coin.logo %>" class="rounded-circle" width="50" onerror="this.onerror=null;this.src='<%= asset_url("placeholder.png") %>'" />
+            <span><%= link_to record.coin.symbol, coin_path(record.coin_id), class: "h3" %></span>
+            <span class="h4 float-end mt-2">
+              Chain: <span class="ms-2 float-end"><%= record.coin.chain %></span>
+              <br />
+              Holders: <span class="float-end"><%= record.coin.users.count %></span>
+            </span>
+          </h5>
+        </div>
+        <div class="card-body">
+          <% record.coin.user_comments.each do |comment| %>
+            <p class="card-text">
+              <p>
+                <%= comment.body %>
+                <small class="float-end"><%= "#{time_ago_in_words comment.created_at} ago" %></small>
+              </p>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

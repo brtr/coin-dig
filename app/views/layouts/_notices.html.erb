@@ -1,0 +1,9 @@
+<% type_mapping = { alert: :danger, notice: :success } %>
+<% flash.each do |k, v| %>
+  <% k = type_mapping[k.to_sym] if type_mapping[k.to_sym].present?  %>
+  <div class="alert alert-<%= k %> alert-dismissible fade show mt-2" role="alert">
+    <strong><%= sanitize(v.to_s) %></strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
+

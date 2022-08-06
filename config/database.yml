@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  database: coin_rar_platform_dev
+  <<: *default
+
+test:
+  database: coin_rar_platform_test
+  <<: *default
+
+stage:
+  <<: *default
+
+production:
+  <<: *default

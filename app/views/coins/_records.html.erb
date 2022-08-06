@@ -1,0 +1,11 @@
+<% @comments.each do |comment| %>
+  <div class="d-flex align-items-start">
+    <div class="flex-grow-1">
+      <small class="float-end"><%= "#{time_ago_in_words comment.created_at} ago" %></small>
+      <strong><%= address_format comment.user.address %></strong><span class="ms-3 review-rating" data-score="<%= comment.rating %>"></span>
+      <br />
+      <p class="mt-3"><%= comment.body %></p>
+    </div>
+  </div>
+  <hr />
+<% end %>

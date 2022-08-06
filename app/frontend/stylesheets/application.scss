@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "./theme.css";
+
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: #202634;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+}
+.pagination .first{
+    padding : 0;
+    float: none;
+    border: none;
+}
+.pagination .prev {
+    padding : 0;
+    float: none;
+    border: none;
+}
+.pagination .page{
+    padding : 0;
+    float: none;
+    border: none;
+}
+.pagination .next{
+    padding : 0;
+    float: none;
+    border: none;
+}
+.pagination .last{
+    padding : 0;
+    float: none;
+    border: none;
+}
+
+.small-logo {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.big-logo {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.hide {
+    display: none;
+}
+
+.alert {
+    position: relative;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+}

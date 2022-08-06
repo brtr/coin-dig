@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coin Dig</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body data-theme="dark">
+    <div class="wrapper">
+      <div class="main">
+        <nav class="navbar navbar-expand navbar-light navbar-bg">
+          <h3>Coin Dig</h3>
+          <div class="sidebar-item">
+            <%= link_to home_path, class: "sidebar-link" do %>
+              <span class="align-middle">Home</span>
+            <% end %>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="navbar-nav navbar-align">
+              <li class="nav-item dropdown">
+                <div class="align-items-center loginBtns">
+                  <div class="navbar-tool dropdown connect-btn">
+                    <%= link_to "Connect Metamask", "#", class: "btn btn-warning", id: "loginBtn" %>
+                  </div>
+                  <div class="navbar-tool dropdown hide">
+                    <a href="#" role="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                      <h4 id="login_address" class="d-inline-block"></h4>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                      <%= link_to "#", class: "dropdown-item", id: "logoutBtn" do %>
+                        <i class="ai-log-out fs-base me-2"></i>
+                        <span>Sign out</span>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main class="content">
+          <%= render "layouts/notices" %>
+          <%= yield %>
+        </main>
+        <footer class="footer">
+          <div class="py-4 py-md-3">
+            <div class="container d-md-flex align-items-center justify-content-center pt-3">
+                <p class="fs-sm pt-2 mb-3"><span class="text-black opacity-50 me-1">© All rights reserved. Made by Coinbay Networks, Inc</span></p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <div id="spinner" class="hide">
+      <%= image_tag("loading.svg") %>
+    </div>
+  </body>
+</html>
