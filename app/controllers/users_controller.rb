@@ -14,6 +14,6 @@ class UsersController < ApplicationController
   end
 
   def coins
-    @records = current_user.user_coins.includes(:user, :coin).where(is_hold: true).sort_by{|r| r.coin.users.count}.reverse
+    @records = current_user.coins.includes(:user_coins, :users).where(user_coins: {is_hold: true}).sort_by{|c| c.users.count}.reverse
   end
 end

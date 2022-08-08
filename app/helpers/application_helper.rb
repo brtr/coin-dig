@@ -14,8 +14,4 @@ module ApplicationHelper
   def decimal_format(data)
     data.to_f.round(3)
   end
-
-  def home_path
-    current_user ? user_coins_path : root_path
-  end
 end

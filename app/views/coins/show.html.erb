@@ -5,7 +5,7 @@
         <h1 class="h3 mb-3"><%= @coin.symbol %></h1>
       </div>
       <hr class="my-0" />
-      <div class="text-center"><img src="<%= @coin.logo %>" class="rounded-circle" width="300px" onerror="this.onerror=null;this.src='<%= asset_url("placeholder.png") %>'" /></div>
+      <div class="text-center"><img src="<%= @coin.logo %>" class="rounded-circle" width="200px" onerror="this.onerror=null;this.src='<%= asset_url("placeholder.png") %>'" /></div>
       <div class="card-body">
         <h3>
           Rating:
@@ -26,7 +26,7 @@
             <%= link_to "More", "#", class: "btn btn-primary btn-block loadMoreBtn", remote: true %>
           </div>
           <% if current_user.is_hold?(@coin.id) %>
-            <%= form_tag add_comment_path(@coin.id) do %>
+            <%= form_tag add_comment_coin_path(@coin.id) do %>
               <div class="form-group my-3">
                 <div id="rating-form"><label class="me-3">Rating</label></div>
                 <textarea class="form-control mt-3" id="comment" name="comment" rows="3"></textarea>

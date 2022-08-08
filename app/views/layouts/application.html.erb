@@ -17,9 +17,7 @@
         <nav class="navbar navbar-expand navbar-light navbar-bg">
           <h3>Coin Dig</h3>
           <div class="sidebar-item">
-            <%= link_to home_path, class: "sidebar-link" do %>
-              <span class="align-middle">Home</span>
-            <% end %>
+            <%= link_to "Home", root_path, class: "sidebar-link" %>
           </div>
           <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">
@@ -33,6 +31,10 @@
                       <h4 id="login_address" class="d-inline-block"></h4>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
+                      <%= link_to user_coins_path, class: "dropdown-item" do %>
+                        <i class="ai-log-out fs-base me-2"></i>
+                        <span>My coins</span>
+                      <% end %>
                       <%= link_to "#", class: "dropdown-item", id: "logoutBtn" do %>
                         <i class="ai-log-out fs-base me-2"></i>
                         <span>Sign out</span>
